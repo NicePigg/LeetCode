@@ -1,0 +1,33 @@
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+ /*     vector<int> res;  
+        stack<TreeNode*> st;
+        auto p = root;
+        //递归用栈模拟
+        while(p){//左链入栈
+            st.push(p);
+            p = p->left;
+        }
+        while(!st.empty()){
+            auto node = st.top();
+            st.pop();
+            res.emplace_back(node->val);
+            p = node->right; //如果有右子树，则把右子树的左链入栈
+            while(p){
+                st.push(p);
+                p = p->left;
+            }
+        }*/
+        //普通递归
+        vector<int> res;
+        dfs(root, res);
+        return res;
+    }
+    void dfs(TreeNode* root, vector<int>& res){
+        if(!root) return;
+        dfs(root->left, res);
+        res.emplace_back(root->val);
+        dfs(root->right, res);
+    }
+};
