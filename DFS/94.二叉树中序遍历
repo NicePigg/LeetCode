@@ -1,3 +1,6 @@
+1. dfs深搜递归
+2. 用栈模拟递归
+3. 中序遍历：左-中-右
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
